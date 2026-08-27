@@ -9,9 +9,8 @@ const subarray = (list) => {
     for (let i = windowSize; i < list.length; i++) {
         currentSum -= list[i - windowSize]
         currentSum += list[i]
+        maxSum = Math.max(maxSum, currentSum)
     }
-    maxSum = Math.max(maxSum, currentSum)
-    
     return maxSum
 }
 
