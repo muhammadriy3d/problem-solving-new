@@ -9,7 +9,7 @@ const twoSum = (list, target) => {
         const neededNum = target - currentNumber
 
         if (seen.has(neededNum)) {
-            return [currentNumber, neededNum]
+            return [seen.get(neededNum), i]
         }
 
         seen.set(currentNumber, i)
