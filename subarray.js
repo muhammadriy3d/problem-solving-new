@@ -1,27 +1,18 @@
 const list = [2, 1, 5, 1, 3, 2]
 
 const subarray = (list) => {
-    // identify the k
     const windowSize = 3
     
-    // list length
     const listLength = list.length
 
-    let maxNumbers = []
+    let currentSum = list.slice(0, windowSize).reduce((a, b) => a + b, 0)
     
-    // loop and take the k amount of the list each time and shift 1 index at each iteration
-    for (let i = 0; i <= listLength - windowSize; i++) {
-        // reset the total each time : fixed my bug when i make it outside the for loop, it was giving NaN after 1 index 
-        let totalSubarray = 0
-        const newTake = list.slice(i, i + windowSize)
-        for (let n of newTake) {
-            totalSubarray += n
-        }
-        maxNumbers = [...maxNumbers, totalSubarray]
+    for (let i = windowSize; i < listLength; i++) {
+        currentSum -= list[i - windowSize] + list[i]
     }
+    maxNumber = Math.max([...maxNumbers, totalSubarray])
     
-    // return the value
-    return Math.max(...maxNumbers)
+    return maxNumber
 }
 
-console.log(substring(list))
+console.log(subarray(list))
