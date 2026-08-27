@@ -4,7 +4,7 @@ const findTwoSum = (list, target) => {
     // know our position
     let left = 0
     let right = list.length - 1 
-    
+
     while (left < right) {
         const currentSum = list[left] + list[right]
 
