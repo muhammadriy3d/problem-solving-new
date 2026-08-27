@@ -1,0 +1,21 @@
+// TWO SUMS
+
+const twoSum = (list, target) => {
+    // create a map to seen
+    const seen = new Map()
+    // loop through the list 
+    for (let i = 0; i < list.length; i++) {
+        const currentNumber = list[i]
+        const neededNum = target - currentNumber
+
+        if (seen.has(neededNum)) {
+            return [currentNumber, neededNum]
+        }
+
+        seen.set(currentNumber, i)
+    }
+    // look up for the target - current so we can know what our needed number instead of guessing
+    // return the indces if found
+}
+
+console.log(twoSum([2, 5, 100 , 23, 11, 4, 3], 9))
